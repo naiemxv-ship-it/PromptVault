@@ -5,6 +5,7 @@ const SHELL_FILES = [
   "./styles.css",
   "./app.js",
   "./firebase.js",
+  "./firebase.config.js",
   "./manifest.webmanifest",
   "./favicon.ico",
   "./icons/promptvault.svg",
@@ -65,7 +66,7 @@ self.addEventListener("fetch", event => {
   }
 
   // Application script files: Network-first to deliver latest code, fallback to cache
-  if (["app.js", "firebase.js"].some(file => url.pathname.endsWith("/" + file))) {
+  if (["app.js", "firebase.js", "firebase.config.js"].some(file => url.pathname.endsWith("/" + file))) {
     event.respondWith(
       fetch(request)
         .then(response => {
