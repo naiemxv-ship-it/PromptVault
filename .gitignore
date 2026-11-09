@@ -1,13 +1,6 @@
-# Firebase credentials / config files (DO NOT commit to GitHub)
-firebase.config.js
-config.json
-.env
-.env.local
-
 # Dependency directories
 node_modules/
 
 # OS metadata
 .DS_Store
 Thumbs.db
-

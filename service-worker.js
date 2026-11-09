@@ -1,11 +1,11 @@
-const CACHE_NAME = "promptvault-shell-v4";
+const CACHE_NAME = "promptvault-shell-v5";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
   "./firebase.js",
-  "./firebase.config.js",
+  "./manifest.json",
   "./manifest.webmanifest",
   "./favicon.ico",
   "./icons/promptvault.svg",
@@ -66,7 +66,7 @@ self.addEventListener("fetch", event => {
   }
 
   // Application script files: Network-first to deliver latest code, fallback to cache
-  if (["app.js", "firebase.js", "firebase.config.js"].some(file => url.pathname.endsWith("/" + file))) {
+  if (["app.js", "firebase.js"].some(file => url.pathname.endsWith("/" + file))) {
     event.respondWith(
       fetch(request)
         .then(response => {
